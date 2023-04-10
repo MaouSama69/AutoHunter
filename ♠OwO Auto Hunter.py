@@ -5,6 +5,55 @@ import os
 
 
 keyboard = Controller()
+def auto_s():
+     keyboard.press('o')
+     keyboard.release('o')
+     
+     keyboard.press('w')
+     keyboard.release('w')
+     
+     keyboard.press('o')
+     keyboard.release('o')
+
+     keyboard.press(Key.space)
+     keyboard.release(Key.space)
+     
+     keyboard.press('s')
+     keyboard.release('s')
+
+     keyboard.press(Key.enter)
+     keyboard.release(Key.enter)
+
+
+
+def auto_flip():
+     keyboard.press('o')
+     keyboard.release('o')
+     
+     keyboard.press('w')
+     keyboard.release('w')
+     
+     keyboard.press('o')
+     keyboard.release('o')
+
+     keyboard.press(Key.space)
+     keyboard.release(Key.space)
+
+     keyboard.press('c')
+     keyboard.release('c')
+     
+     keyboard.press('f')
+     keyboard.release('f')
+
+     keyboard.press(Key.space)
+     keyboard.release(Key.space)
+
+     keyboard.press('1')
+     keyboard.release('1')
+
+     keyboard.press(Key.enter)
+     keyboard.release(Key.enter)
+
 
 def auto_hunt():
      
@@ -54,6 +103,10 @@ def main():
     i = int(0)
     while i < n:
         auto_hunt()
+        time.sleep(2)
+        auto_s()
+        time.sleep(2)
+        auto_flip()
         time.sleep(num)
         i += 1
 

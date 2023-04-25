@@ -48,8 +48,11 @@ def auto_flip():
      keyboard.press(Key.space)
      keyboard.release(Key.space)
 
-     keyboard.press('1')
-     keyboard.release('1')
+     keyboard.press('6')
+     keyboard.release('6')
+
+     keyboard.press('9')
+     keyboard.release('9')
 
      keyboard.press(Key.enter)
      keyboard.release(Key.enter)

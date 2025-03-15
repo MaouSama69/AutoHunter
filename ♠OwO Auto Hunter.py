@@ -6,11 +6,11 @@ import os
 keyboard = Controller()
 
 # Function to simulate key presses
-def press_keys(*keys, delay=0.1):
+def press_keys(*keys):
     for key in keys:
         keyboard.press(key)
         keyboard.release(key)
-        time.sleep(delay)
+        time.sleep(0.1)
 
 def auto_s():
     press_keys('o', 'w', 'o', Key.space, 's', Key.enter)

@@ -3,117 +3,63 @@ import time
 import random
 import os
 
-
 keyboard = Controller()
+
+# Function to simulate key presses
+def press_keys(*keys, delay=0.1):
+    for key in keys:
+        keyboard.press(key)
+        keyboard.release(key)
+        time.sleep(delay)
+
 def auto_s():
-     keyboard.press('o')
-     keyboard.release('o')
-     
-     keyboard.press('w')
-     keyboard.release('w')
-     
-     keyboard.press('o')
-     keyboard.release('o')
-
-     keyboard.press(Key.space)
-     keyboard.release(Key.space)
-     
-     keyboard.press('s')
-     keyboard.release('s')
-
-     keyboard.press(Key.enter)
-     keyboard.release(Key.enter)
-
-
+    press_keys('o', 'w', 'o', Key.space, 's', Key.enter)
 
 def auto_flip():
-     keyboard.press('o')
-     keyboard.release('o')
-     
-     keyboard.press('w')
-     keyboard.release('w')
-     
-     keyboard.press('o')
-     keyboard.release('o')
-
-     keyboard.press(Key.space)
-     keyboard.release(Key.space)
-
-     keyboard.press('c')
-     keyboard.release('c')
-     
-     keyboard.press('f')
-     keyboard.release('f')
-
-     keyboard.press(Key.space)
-     keyboard.release(Key.space)
-
-     keyboard.press('6')
-     keyboard.release('6')
-
-     keyboard.press('9')
-     keyboard.release('9')
-
-     keyboard.press(Key.enter)
-     keyboard.release(Key.enter)
-
+    press_keys('o', 'w', 'o', Key.space, 'c', 'f', Key.space, '6', '9', Key.enter)
 
 def auto_hunt():
-     
-     
-     keyboard.press('o')
-     keyboard.release('o')
-     
-     keyboard.press('w')
-     keyboard.release('w')
-     
-     keyboard.press('o')
-     keyboard.release('o')
-     
-     keyboard.press(Key.space)
-     keyboard.release(Key.space)
-     
-     keyboard.press('h')
-     keyboard.release('h')
-     
-     keyboard.press(Key.enter)
-     keyboard.release(Key.enter)
-     
-def things():
-    os.system("cls")
-    print("      OwO Auto Hunter By ♠D3mon♠")
-    print("♠  Version:- 1.0")
+    press_keys('o', 'w', 'o', Key.space, 'h', Key.enter)
+
+def display_info():
+    os.system("cls" if os.name == "nt" else "clear")
+    print("\t\tAuto Hunter By D3mon")
+    print("♠  Version:- 1.1")
     print("* youtube.com/@d3mon69")
-    print("")
-    print("")
-    print("")
-    print("")
+    print("\n" * 3)
 
+def get_random_delay():
+    return random.randint(15, 20)
 
-
-def ran_n():
-    a = 15
-    b = 20
-    global num
-    num = random.randint(a, b)
-
+def get_valid_repeat_count():
+    while True:
+        try:
+            n = int(input("Repeat Times (max 35): "))
+            if n > 35:
+                print("Please enter a number 35 or below.")
+            elif n <= 0:
+                print("Please enter a positive number.")
+            else:
+                return n
+        except ValueError:
+            print("Invalid input! Please enter a valid number.")
 
 def main():
-    print("Repeat Times :         ")
-    n = int(input())
-    print('Ｒｕｎｎｉｎｇ...')
-    time.sleep(5)
-    i = int(0)
-    while i < n:
+    display_info()
+    n = get_valid_repeat_count()
+
+    print("Ｒｕｎｎｉｎｇ...")
+    time.sleep(3)
+
+    for i in range(n):
         auto_hunt()
         time.sleep(2)
         auto_s()
         time.sleep(2)
         auto_flip()
-        time.sleep(num)
-        i += 1
+        time.sleep(get_random_delay())
 
+    print("Automation Complete!")
 
-things()
-ran_n()
-main()
+if __name__ == "__main__":
+    main()

@@ -24,7 +24,7 @@ def auto_hunt():
 def display_info():
     os.system("cls" if os.name == "nt" else "clear")
     print("\t\tAuto Hunter By D3mon")
-    print("♠  Version:- 1.1")
+    print("♠  Version:- 2.0")
     print("* youtube.com/@d3mon69")
     print("\n" * 3)
 

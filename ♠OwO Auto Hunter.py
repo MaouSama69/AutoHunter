@@ -15,7 +15,7 @@ def press_keys(*keys):
 def auto_s():
     press_keys('o', 'w', 'o', Key.space, 's', Key.enter)
 
-def auto_flip():
+def auto_coin_flip():
     press_keys('o', 'w', 'o', Key.space, 'c', 'f', Key.space, '6', '9', Key.enter)
 
 def auto_hunt():

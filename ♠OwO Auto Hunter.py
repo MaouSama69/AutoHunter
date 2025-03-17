@@ -56,7 +56,7 @@ def main():
         time.sleep(2)
         auto_s()
         time.sleep(2)
-        auto_flip()
+        auto_coin_flip()
         time.sleep(get_random_delay())
 
     print("Automation Complete!")
